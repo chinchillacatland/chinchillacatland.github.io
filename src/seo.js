@@ -2,8 +2,10 @@ import { getArticle } from './content/articles'
 import { games } from './data/games'
 import { tools } from './tools'
 
+// origin：canonical/OG 網址需要完整網域，換網域時只需要改這一個地方
 export const SITE = {
   name: '金吉拉樂園 Chinchilla Cat Land',
+  origin: 'https://chinchillacatland.github.io',
 }
 
 const DEFAULT_DESCRIPTION =

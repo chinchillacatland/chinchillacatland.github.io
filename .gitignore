@@ -1,5 +1,6 @@
 node_modules
 dist
+dist-server
 
 # 規劃文件僅留本地，不上 git
 docs/

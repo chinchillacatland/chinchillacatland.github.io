@@ -3,10 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="金吉拉樂園：金吉拉貓的品種介紹、飼養建議、健康管理知識，還有一系列金吉拉主題小遊戲。"
-    />
     <!-- favicon：金吉拉吉祥物簡化版（與 src/components/ChinchillaCat.jsx 同款） -->
     <link
       rel="icon"
@@ -18,10 +14,12 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <title>金吉拉樂園 Chinchilla Cat Land</title>
+    <!-- title/description/canonical/og 由 scripts/prerender.mjs 依路由注入；
+         dev 模式下沒有這個標記，PageMeta.jsx 會用 JS 補上 title/description -->
+    <!--app-head-->
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
