@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { articles, CATEGORIES } from '../content/articles'
+import { paths } from '../paths'
 
 export default function Knowledge() {
   const [category, setCategory] = useState('all')
@@ -42,7 +43,7 @@ export default function Knowledge() {
           {filtered.map((article) => (
             <Link
               key={article.slug}
-              to={`/knowledge/${article.slug}`}
+              to={paths.article(article.slug)}
               className="card-sticker card-sticker-hover p-5"
             >
               <p className="text-xs font-bold text-emerald-700">

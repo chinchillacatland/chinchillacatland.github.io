@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ChinchillaCat from '../../components/ChinchillaCat'
 import { load, save } from '../../services/storageService'
+import { paths } from '../../paths'
 import { buildRound, scoreOf, rankOf } from './engine'
 import { banks } from './banks'
 import { articles } from '../../content/articles'
@@ -148,7 +149,7 @@ export default function QuizGame({ bankId }) {
           <button onClick={start} className="btn-honey">
             再挑戰一輪
           </button>
-          <Link to="/knowledge" className="btn-outline">
+          <Link to={paths.knowledge()} className="btn-outline">
             去知識庫進修
           </Link>
         </div>
@@ -169,7 +170,7 @@ export default function QuizGame({ bankId }) {
                   <p className="mt-1 text-cocoa-700">{q.explanation}</p>
                   {article && (
                     <Link
-                      to={`/knowledge/${article.slug}`}
+                      to={paths.article(article.slug)}
                       className="mt-1 inline-block font-bold text-honey-600 hover:underline"
                     >
                       複習：{article.title} →

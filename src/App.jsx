@@ -3,6 +3,7 @@ import { Routes, Route, NavLink } from 'react-router-dom'
 import ChinchillaCat from './components/ChinchillaCat'
 import ScrollToTop from './components/ScrollToTop'
 import PageMeta from './components/PageMeta'
+import { paths } from './paths'
 import NotFound from './pages/NotFound'
 import Home from './pages/Home'
 import Knowledge from './pages/Knowledge'
@@ -15,10 +16,10 @@ import About from './pages/About'
 import Privacy from './pages/Privacy'
 
 const navItems = [
-  { to: '/', label: '首頁' },
-  { to: '/knowledge', label: '認識金吉拉' },
-  { to: '/games', label: '遊戲樂園' },
-  { to: '/tools', label: '互動工具' },
+  { to: paths.home(), label: '首頁' },
+  { to: paths.knowledge(), label: '認識金吉拉' },
+  { to: paths.games(), label: '遊戲樂園' },
+  { to: paths.tools(), label: '互動工具' },
 ]
 
 function NavLinks({ onNavigate, className }) {
@@ -53,7 +54,7 @@ export default function App() {
       <header className="sticky top-0 z-20 px-4 pt-3 pb-1">
         <div className="mx-auto flex max-w-3xl items-center justify-between rounded-full border-2 border-cocoa-200 bg-white/95 py-2 pr-2 pl-5 shadow-[3px_3px_0_0_var(--color-cocoa-100)] backdrop-blur">
           <NavLink
-            to="/"
+            to={paths.home()}
             onClick={() => setMenuOpen(false)}
             className="flex items-center gap-1.5 whitespace-nowrap text-lg font-black text-cocoa-900"
           >
@@ -130,10 +131,10 @@ export default function App() {
             本站內容為飼養知識參考，並非獸醫醫療建議。若貓咪有健康異狀，請諮詢獸醫師。
           </p>
           <div className="flex gap-4">
-            <NavLink to="/about" className="font-medium hover:text-cocoa-900 hover:underline">
+            <NavLink to={paths.about()} className="font-medium hover:text-cocoa-900 hover:underline">
               關於本站／免責聲明
             </NavLink>
-            <NavLink to="/privacy" className="font-medium hover:text-cocoa-900 hover:underline">
+            <NavLink to={paths.privacy()} className="font-medium hover:text-cocoa-900 hover:underline">
               隱私權政策
             </NavLink>
           </div>

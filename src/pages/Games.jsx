@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { games } from '../data/games'
+import { paths } from '../paths'
 
 function GameCard({ game }) {
   const isLive = game.status === 'live'
@@ -20,7 +21,7 @@ function GameCard({ game }) {
   }
 
   return (
-    <Link to={`/games/${game.id}`} className="card-sticker card-sticker-hover group p-6">
+    <Link to={paths.game(game.id)} className="card-sticker card-sticker-hover group p-6">
       <p className="inline-block rounded-2xl bg-cream-100 p-2.5 text-4xl">{game.emoji}</p>
       <h2 className="mt-3 text-lg font-black text-cocoa-900">{game.title}</h2>
       <p className="mt-2 text-sm leading-relaxed text-cocoa-700">{game.summary}</p>

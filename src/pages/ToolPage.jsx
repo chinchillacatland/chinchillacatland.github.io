@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import NotFound from './NotFound'
 import { tools } from '../tools'
+import { paths } from '../paths'
 
 export default function ToolPage() {
   const { toolId } = useParams()
@@ -10,7 +11,7 @@ export default function ToolPage() {
 
   return (
     <div className="mx-auto max-w-2xl">
-      <Link to="/tools" className="text-sm font-bold text-honey-600 hover:underline">
+      <Link to={paths.tools()} className="text-sm font-bold text-honey-600 hover:underline">
         ← 回互動工具
       </Link>
       <h1 className="mt-4 text-center text-2xl font-black text-cocoa-900">

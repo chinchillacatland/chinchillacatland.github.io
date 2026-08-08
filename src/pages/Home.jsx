@@ -2,24 +2,25 @@ import { Link } from 'react-router-dom'
 import ChinchillaCat from '../components/ChinchillaCat'
 import { articles } from '../content/articles'
 import { games } from '../data/games'
+import { paths } from '../paths'
 
 const sections = [
   {
-    to: '/knowledge',
+    to: paths.knowledge(),
     emoji: '📖',
     title: '認識金吉拉',
     text: '品種故事、飼養建議到健康管理，新手與資深飼主都能找到需要的知識。',
     cta: '進入知識庫',
   },
   {
-    to: '/games',
+    to: paths.games(),
     emoji: '🎮',
     title: '遊戲樂園',
     text: '知識測驗、每日運勢、躲貓貓……一邊玩一邊變成金吉拉專家。',
     cta: '去玩遊戲',
   },
   {
-    to: '/tools',
+    to: paths.tools(),
     emoji: '🧮',
     title: '互動工具',
     text: '飼養花費試算、貓咪年齡換算、取名產生器，養貓大小事一鍵搞定。',
@@ -57,10 +58,10 @@ export default function Home() {
             學會怎麼照顧牠，再到遊戲樂園陪牠玩一場。
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link to="/knowledge" className="btn-honey">
+            <Link to={paths.knowledge()} className="btn-honey">
               開始認識金吉拉
             </Link>
-            <Link to="/games" className="btn-outline">
+            <Link to={paths.games()} className="btn-outline">
               🎮 遊戲樂園
             </Link>
           </div>
@@ -87,7 +88,7 @@ export default function Home() {
           <div className="mb-5 flex items-baseline justify-between">
             <h2 className="text-xl font-black text-cocoa-900">📰 最新文章</h2>
             <Link
-              to="/knowledge"
+              to={paths.knowledge()}
               className="text-sm font-bold text-honey-600 hover:underline"
             >
               全部文章 →
@@ -97,7 +98,7 @@ export default function Home() {
             {latestArticles.map((article) => (
               <Link
                 key={article.slug}
-                to={`/knowledge/${article.slug}`}
+                to={paths.article(article.slug)}
                 className="card-sticker card-sticker-hover p-5"
               >
                 <h3 className="font-bold text-cocoa-900">{article.title}</h3>
@@ -116,7 +117,7 @@ export default function Home() {
           <h2 className="text-xl font-black text-cocoa-900">
             {liveGames.length > 0 ? '🔥 熱門遊戲' : '🎪 遊戲搶先看'}
           </h2>
-          <Link to="/games" className="text-sm font-bold text-honey-600 hover:underline">
+          <Link to={paths.games()} className="text-sm font-bold text-honey-600 hover:underline">
             所有遊戲 →
           </Link>
         </div>
@@ -126,7 +127,7 @@ export default function Home() {
               game.status === 'live' ? (
                 <Link
                   key={game.id}
-                  to={`/games/${game.id}`}
+                  to={paths.game(game.id)}
                   className="card-sticker card-sticker-hover p-5 text-center"
                 >
                   <p className="text-3xl">{game.emoji}</p>

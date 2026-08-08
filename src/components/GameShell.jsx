@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { paths } from '../paths'
 
 // 所有遊戲共用的外框：返回列表、標題、玩法說明彈窗。
 // 遊戲內容（含重玩、計分）由 children 自行管理。
@@ -9,7 +10,7 @@ export default function GameShell({ title, emoji, instructions, children }) {
   return (
     <div className="mx-auto max-w-2xl">
       <div className="flex items-center justify-between">
-        <Link to="/games" className="text-sm font-bold text-honey-600 hover:underline">
+        <Link to={paths.games()} className="text-sm font-bold text-honey-600 hover:underline">
           ← 回遊戲樂園
         </Link>
         <button

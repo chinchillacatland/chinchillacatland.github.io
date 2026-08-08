@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { tools } from '../tools'
+import { paths } from '../paths'
 
 export default function Tools() {
   return (
@@ -10,7 +11,7 @@ export default function Tools() {
         {tools.map((tool) => (
           <Link
             key={tool.id}
-            to={`/tools/${tool.id}`}
+            to={paths.tool(tool.id)}
             className="card-sticker card-sticker-hover group p-6"
           >
             <p className="inline-block rounded-2xl bg-cream-100 p-2.5 text-4xl">{tool.emoji}</p>

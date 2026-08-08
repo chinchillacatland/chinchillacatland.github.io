@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { getArticle, CATEGORIES } from '../content/articles'
+import { paths } from '../paths'
 import NotFound from './NotFound'
 
 export default function Article() {
@@ -14,7 +15,7 @@ export default function Article() {
 
   return (
     <article className="mx-auto max-w-2xl">
-      <Link to="/knowledge" className="text-sm font-bold text-honey-600 hover:underline">
+      <Link to={paths.knowledge()} className="text-sm font-bold text-honey-600 hover:underline">
         ← 回知識庫
       </Link>
       <header className="mt-4">
